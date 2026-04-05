@@ -1,0 +1,134 @@
+<style>
+  .accordion-header {
+    background-color: #f5f6f7;
+  }
+  
+  /* تخصيص الزر */
+  .accordion-button {
+    padding: 1.25rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  /* إزالة سهم بوتستراب الافتراضي ووضع علامة + */
+  .accordion-button::after {
+    margin-right: auto;
+    margin-left: 0;
+    background-image: none !important;
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #333;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* عند فتح الـ Accordion تتحول علامة + إلى - أو تدور */
+  .accordion-button:not(.collapsed)::after {
+    transform: rotate(
+      45deg
+    ); /* تجعل الزائد يبدو كـ x أو يمكنك تغيير المحتوى لـ "-" */
+    color: #000;
+  }
+
+  /* إزالة الحدود والظلال المزعجة */
+  .accordion-item {
+    overflow: hidden;
+  }
+
+  .accordion-button:focus {
+    box-shadow: none;
+    background-color: var(--primary);
+  }
+</style>
+
+<section class="sectionPadding">
+  <div class="container">
+    <hgroup class="section-header mb-4">
+      <span>ما هي طبشور</span>
+      <h4>طبشور هي اهم شركة تقدم لك الخدمات المتعلقة بخدمة التعليم</h4>
+    </hgroup>
+
+    <div class="row align-items-center justify-content-center g-5">
+      <div class="col-12 col-lg-8">
+        <div class="accordion accordion-flush" id="faqAccordion">
+          <div class="accordion-item mb-3 border-0 bg-light rounded-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-transparent shadow-none text-end"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+              >
+                ما هي منصة طبشور
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-muted">
+                هنا تضع الإجابة الخاصة بالمنصة وخدماتها التعليمية.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3 border-0 bg-light rounded-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-transparent shadow-none text-end"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+              >
+                ما هي خطط الاشتراك المتاحة
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-muted">
+                تفاصيل خطط الاشتراك والأسعار.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3 border-0 bg-light rounded-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-transparent shadow-none text-end"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+              >
+                هل يمكنني استخدام نطاقي الخاص بدلاً من النطاق الفرعي
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-muted">
+                نعم، يمكنك ربط دومين خاص بك بكل سهولة.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4 faq-image">
+        <img
+          src="/assets/images/product-image.png"
+          alt="طبشور"
+          class="rounded-4 w-100 h-100 object-fit-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
