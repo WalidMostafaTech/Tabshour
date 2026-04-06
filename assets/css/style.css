@@ -3,15 +3,17 @@
 /* global */
 :root {
   --primary: #1e1538;
+  --primary-soft: #1e153830;
   --secondary: #02df99;
+  --secondary-soft: #02df992f;
   --dark: #0f172a;
-  --light: #f8fafc;
-  --gray: #94a3b8;
+  --light: #ffffff;
+  --gray: #f5f6f7;
   --danger: #ef4444;
   --p: #475569;
 }
 :root {
-  --bs-primary-rgb: 30, 21, 56; /* نفس اللون بصيغة RGB */
+  --bs-primary-rgb: 30, 21, 56;
   --bs-secondary-rgb: 2, 223, 153;
 }
 
@@ -20,7 +22,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  /* line-height: 1.6; */
+  line-height: 1.6;
 
   background-color: var(--light);
   color: var(--dark);
@@ -49,7 +51,7 @@ p {
 .sectionPadding {
   padding-block: 1.5rem;
 
-  @media (width >= 48rem /* 768px */) {
+  @media (width >=768px) {
     padding-block: 4.5rem;
   }
 }
@@ -57,7 +59,7 @@ p {
 .pagePadding {
   padding-block: 1.5rem;
 
-  @media (width >= 48rem /* 768px */) {
+  @media (width >=768px) {
     padding-block: 2.5rem;
   }
 }
@@ -72,13 +74,16 @@ p {
   background: var(--primary);
   color: #fff;
 
-  /* Outline */
   &.outline {
     background: var(--light);
     color: var(--primary);
   }
 
-  /* Hover */
+  &.secondary {
+    background: var(--secondary);
+    border-color: var(--secondary);
+  }
+
   &:hover {
     opacity: 0.9;
   }
@@ -98,80 +103,146 @@ p {
     padding-inline-start: 6px;
   }
 
-  h4 {
+  .section-header-title {
     line-height: 1.5;
+    font-size: 1.1rem;
   }
 
-  @media (width >= 64rem /* 960px */) {
-    h4 {
-      max-width: 28rem;
+  @media (width >= 960px) {
+    .section-header-title {
+      max-width: 30rem;
     }
 
-    p {
+    .section-header-description {
       max-width: 36rem;
     }
   }
 }
 
-/* brand-logo */
-.brand-logo {
-  max-height: 35px;
-  width: auto;
-  filter: grayscale(100%);
-  opacity: 0.6;
-  transition: 0.3s;
+/* who we are */
+.who-we-are-image {
+  height: 300px;
+
+  @media (width >= 768px) {
+    height: 380px;
+  }
 }
 
-.brand-logo:hover {
-  filter: grayscale(0%);
-  opacity: 1;
+/* navbar */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-/*  */
-.home-banner {
-  .flout-card {
-    position: absolute;
-    background: white;
-    padding: 6px 12px;
-    border-radius: 8px;
+/* accordion */
+.accordion {
+  .accordion-header {
+    background-color: #f5f6f7;
+  }
+
+  .accordion-button {
+    padding: 1.25rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: var(--primary) !important;
+    color: white;
+
+    &::after {
+      transform: rotate(45deg);
+      color: white;
+    }
+  }
+
+  .accordion-button::after {
+    margin-right: auto;
+    margin-left: 0;
+    background-image: none !important;
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #333;
+    transition: transform 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+  }
 
-    &.start {
-      bottom: 20%;
-      right: -20px;
+  .accordion-item {
+    overflow: hidden;
+  }
 
-      @media (width >= 992px) {
-        right: -10%;
-      }
-    }
+  .accordion-button:focus {
+    box-shadow: none;
+    background-color: var(--primary);
+  }
+}
 
-    &.end {
-      top: 20%;
-      left: -20px;
-
-      @media (width >= 992px) {
-        left: -10%;
-      }
-    }
+/* blog-card */
+.blog-card {
+  .card-img {
+    height: 250px;
 
     img {
-      width: 32px;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
 
-    .title {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--dark);
-      margin: 0;
+    @media (width >= 512px) {
+      height: 290px;
     }
 
-    .desc {
-      font-size: 10px;
-      color: var(--p);
-      margin: 0;
-      margin-top: 2px;
+    @media (width >= 768px) {
+      height: 250px;
     }
+
+    @media (width >= 1200px) {
+      height: 300px;
+    }
+  }
+}
+
+/* footer */
+.footer-section {
+  background-color: var(--primary);
+  font-size: 0.95rem;
+
+  /* تنسيق الروابط */
+  .footer-links li {
+    margin-bottom: 15px;
+  }
+
+  .footer-links a {
+    color: #d1d1d1;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: #fff;
+    padding-right: 5px; /* تأثير حركة بسيط عند التمرير */
+  }
+
+  /* تنسيق وصف الشركة */
+  .footer-desc {
+    color: #fff;
+    line-height: 1.8;
+  }
+
+  /* تنسيق أيقونات السوشيال ميديا */
+  .social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .social-links a:hover {
+    transform: translateY(-3px);
+    color: var(--secondary); /* اختياري: لون عند التمرير */
   }
 }
