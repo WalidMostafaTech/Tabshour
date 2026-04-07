@@ -4,6 +4,12 @@ const loadComponent = async (id, file) => {
   document.getElementById(id).innerHTML = data;
 };
 
+// load contact-icons-section
+loadComponent(
+  "contact-icons-section",
+  "/components/contact-icons-section.html",
+);
+
 // load navbar
 loadComponent("navbar", "/components/navbar.html");
 

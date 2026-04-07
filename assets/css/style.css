@@ -3,18 +3,23 @@
 /* global */
 :root {
   --primary: #1e1538;
-  --primary-soft: #1e153830;
+  --primary-soft: #1e15381b;
   --secondary: #02df99;
-  --secondary-soft: #02df992f;
+  --secondary-soft: #02df9929;
   --dark: #0f172a;
   --light: #ffffff;
   --gray: #f5f6f7;
   --danger: #ef4444;
   --p: #475569;
 }
+
 :root {
   --bs-primary-rgb: 30, 21, 56;
   --bs-secondary-rgb: 2, 223, 153;
+}
+
+html {
+  scroll-padding-top: 50px;
 }
 
 body {
@@ -61,6 +66,26 @@ p {
 
   @media (width >=768px) {
     padding-block: 2.5rem;
+  }
+}
+
+.form-label {
+  font-size: 14px;
+}
+
+.form-control,
+.form-select {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: "Alexandria", sans-serif;
+  transition: 0.2s;
+
+  &:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+    outline: none;
   }
 }
 
@@ -113,9 +138,9 @@ p {
       max-width: 30rem;
     }
 
-    .section-header-description {
+    /* .section-header-description {
       max-width: 36rem;
-    }
+    } */
   }
 }
 
@@ -157,12 +182,16 @@ p {
     }
   }
 
+  .accordion-body {
+    background-color: var(--primary-soft);
+  }
+
   .accordion-button::after {
     margin-right: auto;
     margin-left: 0;
     background-image: none !important;
     content: "+";
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 300;
     color: #333;
     transition: transform 0.3s ease;
@@ -181,6 +210,49 @@ p {
   }
 }
 
+/* footer */
+.footer-section {
+  background-color: var(--primary);
+  font-size: 0.95rem;
+
+  /* تنسيق وصف الشركة */
+  .footer-desc {
+    color: #fff;
+    line-height: 1.8;
+  }
+
+  /* تنسيق الروابط */
+  .footer-links li {
+    margin-bottom: 15px;
+    font-size: small;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+      padding-right: 3px;
+      color: var(--secondary);
+    }
+  }
+
+  /* تنسيق أيقونات السوشيال ميديا */
+  .social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      color: var(--secondary); /* اختياري: لون عند التمرير */
+    }
+  }
+}
+
 /* blog-card */
 .blog-card {
   .card-img {
@@ -192,57 +264,8 @@ p {
       width: 100%;
     }
 
-    @media (width >= 512px) {
-      height: 290px;
-    }
-
     @media (width >= 768px) {
-      height: 250px;
+      height: 200px;
     }
-
-    @media (width >= 1200px) {
-      height: 300px;
-    }
-  }
-}
-
-/* footer */
-.footer-section {
-  background-color: var(--primary);
-  font-size: 0.95rem;
-
-  /* تنسيق الروابط */
-  .footer-links li {
-    margin-bottom: 15px;
-  }
-
-  .footer-links a {
-    color: #d1d1d1;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-
-  .footer-links a:hover {
-    color: #fff;
-    padding-right: 5px; /* تأثير حركة بسيط عند التمرير */
-  }
-
-  /* تنسيق وصف الشركة */
-  .footer-desc {
-    color: #fff;
-    line-height: 1.8;
-  }
-
-  /* تنسيق أيقونات السوشيال ميديا */
-  .social-links a {
-    color: #fff;
-    font-size: 1.2rem;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-  }
-
-  .social-links a:hover {
-    transform: translateY(-3px);
-    color: var(--secondary); /* اختياري: لون عند التمرير */
   }
 }

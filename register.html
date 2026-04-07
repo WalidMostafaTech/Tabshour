@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>طبشور - إنشاء حساب</title>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- intl-tel-input -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css"
+    />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/login.css" />
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <div id="navbar"></div>
+
+    <main
+      style="
+        min-height: 100dvh;
+        padding: 12px;
+        padding-block: 6rem;
+        background: url(/assets/images/bg-image.png) no-repeat center center;
+        background-size: cover;
+      "
+      class="d-flex justify-content-center align-items-center"
+    >
+      <div class="w-100" style="max-width: 900px">
+        <!-- Steps Header -->
+        <div class="steps-header">
+          <div class="steps">
+            <div class="step-item">
+              <span class="step-label active" id="label-1"
+                >البيانات الشخصية</span
+              >
+              <div class="step-circle active" id="circle-1">1</div>
+            </div>
+
+            <div class="step-item">
+              <span class="step-label" id="label-2">بيانات العمل</span>
+              <div class="step-circle" id="circle-2">2</div>
+            </div>
+
+            <div class="step-item">
+              <span class="step-label" id="label-3">طريقة الدفع</span>
+              <div class="step-circle" id="circle-3">3</div>
+            </div>
+          </div>
+
+          <div class="progress-line">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- ===== Step 1: البيانات الشخصية ===== -->
+        <div class="step-section active" id="step-1">
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label">اسمك</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="اكتب اسمك هنا"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">البريد الإلكتروني</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="اكتب بريدك هنا"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">رقم الجوال</label>
+              <input
+                id="phone"
+                type="tel"
+                class="form-control"
+                placeholder="أدخل رقم الجوال"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">كلمة المرور</label>
+              <div class="position-relative">
+                <input
+                  type="password"
+                  id="password-input"
+                  class="form-control ps-5"
+                  placeholder="••••••••"
+                />
+                <button
+                  type="button"
+                  onclick="togglePassword()"
+                  class="password-toggle-btn"
+                >
+                  <i class="bi bi-eye" id="eye-icon"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button
+              onclick="goToStep(2)"
+              class="main-btn"
+              style="min-width: 150px"
+            >
+              التالي
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== Step 2: بيانات العمل ===== -->
+        <div class="step-section" id="step-2">
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label">الاسم</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="اسم الأكاديمية"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">اسم النطاق</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="اسم المنشأه"
+              />
+            </div>
+          </div>
+
+          <section class="pricing-plan my-4">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center text-center gap-2 mb-3"
+            >
+              <h3 class="text-primary">خطط الأسعار</h3>
+              <p class="text-primary">
+                اختر الباقة المناسبة لحجم عملك. يمكنك الترقية أو الإلغاء في أي
+                وقت.
+              </p>
+
+              <div class="btn-group">
+                <button class="active">شهري</button>
+                <button class="">سنوي</button>
+              </div>
+            </div>
+
+            <div class="row g-3 justify-content-center">
+              <div class="col-lg-4">
+                <div class="card" onclick="selectPlan(this)">
+                  <div class="card-header">
+                    <h6 class="title">مركز التدريب الإحترافي</h6>
+                    <p class="m-0">مثالية للمبتدئين في بيع المنتجات الرقمية.</p>
+                    <h2 class="price">3520 <span class="">جنيه / شهر</span></h2>
+                  </div>
+
+                  <ul class="card-list">
+                    <li><i class="bi bi-check2"></i>دورات تدريبية</li>
+                    <li><i class="bi bi-check2"></i>فعاليات ورش عمل</li>
+                    <li><i class="bi bi-check2"></i>دورات تدريبية مجمعة</li>
+                    <li class="disabled">
+                      <i class="bi bi-dash"></i>لوحة تحكم للمدرب
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="card" onclick="selectPlan(this)">
+                  <div class="card-header">
+                    <h6 class="title">مركز التدريب الإحترافي</h6>
+                    <p class="m-0">مثالية للمبتدئين في بيع المنتجات الرقمية.</p>
+                    <h2 class="price">3520 <span class="">جنيه / شهر</span></h2>
+                  </div>
+
+                  <ul class="card-list">
+                    <li><i class="bi bi-check2"></i>دورات تدريبية</li>
+                    <li><i class="bi bi-check2"></i>فعاليات ورش عمل</li>
+                    <li><i class="bi bi-check2"></i>دورات تدريبية مجمعة</li>
+                    <li class="disabled">
+                      <i class="bi bi-dash"></i>لوحة تحكم للمدرب
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="card" onclick="selectPlan(this)">
+                  <div class="card-header">
+                    <h6 class="title">مركز التدريب الإحترافي</h6>
+                    <p class="m-0">مثالية للمبتدئين في بيع المنتجات الرقمية.</p>
+                    <h2 class="price">3520 <span class="">جنيه / شهر</span></h2>
+                  </div>
+
+                  <ul class="card-list">
+                    <li><i class="bi bi-check2"></i>دورات تدريبية</li>
+                    <li><i class="bi bi-check2"></i>فعاليات ورش عمل</li>
+                    <li><i class="bi bi-check2"></i>دورات تدريبية مجمعة</li>
+                    <li class="disabled">
+                      <i class="bi bi-dash"></i>لوحة تحكم للمدرب
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="d-flex gap-2 justify-content-between">
+            <button
+              onclick="goToStep(1)"
+              class="main-btn outline"
+              style="min-width: 150px"
+            >
+              السابق
+            </button>
+
+            <button
+              onclick="goToStep(3)"
+              class="main-btn"
+              style="min-width: 150px"
+            >
+              التالي
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== Step 3: طريقة الدفع ===== -->
+        <div class="step-section" id="step-3">
+          <div
+            class="d-flex flex-column align-items-center justify-content-center text-center gap-2 mb-3"
+          >
+            <h3 class="text-primary">بيانات الفاتورة</h3>
+            <p class="text-primary">
+              يرجى مراجعة كافة البيانات قبل الدفع أو الطلب
+            </p>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label">اسم الباقة</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="اسم الباقة"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">المده المراد حجزها</label>
+              <select class="form-select">
+                <option value="" disabled selected>سنه كامله</option>
+                <option>6 شهور</option>
+                <option>1 شهور</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3 overflow-hidden mb-3 border">
+            <div
+              class="d-flex align-items-center gap-2 p-2 px-lg-4"
+              style="background-color: var(--primary-soft)"
+            >
+              <div
+                class="d-flex justify-content-center align-items-center rounded-circle bg-primary text-white fs-3"
+                style="width: 2.5rem; height: 2.5rem"
+              >
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <h6 class="text-primary flex-grow-1 m-0">بيانات العميل</h6>
+            </div>
+
+            <ul class="list-group list-group-flush p-2 px-lg-4">
+              <li
+                class="d-flex gap-2 justify-content-between border-bottom py-2"
+              >
+                <p style="font-size: 12px; margin: 0">اسم العميل</p>
+                <span style="font-size: 12px">حسن احمد محمود</span>
+              </li>
+              <li
+                class="d-flex gap-2 justify-content-between border-bottom py-2"
+              >
+                <p style="font-size: 12px; margin: 0">اسم العميل</p>
+                <span style="font-size: 12px">حسن احمد محمود</span>
+              </li>
+              <li
+                class="d-flex gap-2 justify-content-between border-bottom py-2"
+              >
+                <p style="font-size: 12px; margin: 0">اسم العميل</p>
+                <span style="font-size: 12px">حسن احمد محمود</span>
+              </li>
+              <li
+                class="d-flex gap-2 justify-content-between border-bottom py-2"
+              >
+                <p style="font-size: 12px; margin: 0">اسم العميل</p>
+                <span style="font-size: 12px">حسن احمد محمود</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-3 overflow-hidden mb-3 border">
+            <div
+              class="d-flex align-items-center gap-2 p-2 px-lg-4"
+              style="background-color: var(--primary-soft)"
+            >
+              <div
+                class="d-flex justify-content-center align-items-center rounded-circle bg-primary text-white fs-3"
+                style="width: 2.5rem; height: 2.5rem"
+              >
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <h6 class="text-primary flex-grow-1 m-0">بيانات الباقه</h6>
+            </div>
+
+            <ul class="list-group list-group-flush p-2 px-lg-4">
+              <li
+                class="d-flex gap-2 justify-content-between border-bottom py-2"
+              >
+                <p style="font-size: 12px; margin: 0">سعر الباقة</p>
+                <span style="font-size: 12px">3500</span>
+              </li>
+              <li
+                class="d-flex gap-2 justify-content-between border-bottom py-2"
+              >
+                <p style="font-size: 12px; margin: 0">سعر الباقة</p>
+                <span style="font-size: 12px">3500</span>
+              </li>
+              <li
+                class="d-flex gap-2 justify-content-between border-bottom py-2"
+              >
+                <p style="font-size: 12px; margin: 0">سعر الباقة</p>
+                <span style="font-size: 12px">3500</span>
+              </li>
+              <li
+                class="d-flex gap-2 justify-content-between border-bottom py-2"
+              >
+                <p style="font-size: 16px; margin: 0">المطلوب دفعه</p>
+                <span style="font-size: 16px; font-weight: 600">3500</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="d-flex gap-2 justify-content-between">
+            <button
+              onclick="goToStep(2)"
+              class="main-btn outline"
+              style="min-width: 150px"
+            >
+              السابق
+            </button>
+
+            <button
+              onclick="submitForm()"
+              class="main-btn"
+              style="min-width: 150px"
+            >
+              إنشاء الحساب
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <div id="footer"></div>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- intl-tel-input -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
+    <!-- main.js  -->
+    <script src="/assets/js/loadComponent.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script>
+      let currentStep = 1;
+      const totalSteps = 3;
+
+      function goToStep(step) {
+        // إخفاء الخطوة الحالية
+        document
+          .getElementById("step-" + currentStep)
+          .classList.remove("active");
+
+        // تحديث حالة الدوائر
+        for (let i = 1; i <= totalSteps; i++) {
+          const circle = document.getElementById("circle-" + i);
+          const label = document.getElementById("label-" + i);
+
+          circle.classList.remove("active", "done");
+          label.classList.remove("active", "done");
+
+          if (i < step) {
+            circle.classList.add("done");
+            label.classList.add("done");
+            circle.innerHTML =
+              '<i class="bi bi-check2" style="font-size:16px;"></i>';
+          } else if (i === step) {
+            circle.classList.add("active");
+            circle.textContent = i;
+            label.classList.add("active");
+          } else {
+            circle.textContent = i;
+          }
+        }
+
+        // تحريك خط التقدم
+        const progressFill = document.getElementById("progress-fill");
+        const pct = ((step - 1) / (totalSteps - 1)) * 100;
+        progressFill.style.width = pct + "%";
+
+        // إظهار الخطوة الجديدة
+        currentStep = step;
+        document.getElementById("step-" + step).classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // تفعيل
+      const phoneInput = document.querySelector("#phone");
+      const iti = window.intlTelInput(phoneInput, {
+        initialCountry: "sa", // مصر
+        preferredCountries: ["eg", "sa", "ae"],
+        separateDialCode: true,
+        utilsScript:
+          "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
+      });
+
+      function togglePassword() {
+        const input = document.getElementById("password-input");
+        const icon = document.getElementById("eye-icon");
+        if (input.type === "password") {
+          input.type = "text";
+          icon.className = "bi bi-eye-slash";
+        } else {
+          input.type = "password";
+          icon.className = "bi bi-eye";
+        }
+      }
+
+      let selectedPlan = null;
+
+      function selectPlan(card) {
+        const cards = document.querySelectorAll(".pricing-plan .card");
+
+        cards.forEach((c) => c.classList.remove("active"));
+
+        card.classList.add("active");
+
+        // خد اسم الباقة
+        selectedPlan = card.querySelector(".title").textContent;
+
+        console.log(selectedPlan);
+      }
+
+      function submitForm() {
+        alert("تم إنشاء الحساب بنجاح! 🎉");
+      }
+    </script>
+  </body>
+</html>

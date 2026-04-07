@@ -1,0 +1,238 @@
+/* ===== Steps Header ===== */
+.steps-header {
+  margin-bottom: 2rem;
+
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+      /* flex: 1; */
+
+      .step-circle {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        border: 2px solid #ddd;
+        background: white;
+        color: #686868;
+
+        &.active,
+        &.done {
+          background: var(--primary);
+          border-color: var(--primary);
+          color: white;
+        }
+      }
+
+      .step-label {
+        font-size: 12px;
+        color: #686868;
+        transition: color 0.3s;
+
+        &.active,
+        &.done {
+          color: var(--primary);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .progress-line {
+    height: 4px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--primary);
+      transition: width 0.4s ease;
+    }
+  }
+}
+
+/* ===== Step Sections ===== */
+.step-section {
+  display: none;
+}
+.step-section.active {
+  display: block;
+}
+
+/* حقل رقم الجوال مع الكود */
+.iti {
+  width: 100%;
+}
+
+.iti input {
+  width: 100%;
+  padding-block: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-family: "Alexandria", sans-serif;
+}
+
+.iti input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+  outline: none;
+}
+
+.iti__flag-container {
+  border-radius: 10px 0 0 10px;
+}
+
+/* حقل كلمة المرور */
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  inset-inline-end: 12px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.password-toggle-btn:hover {
+  color: var(--primary);
+}
+
+/* pricing-plan */
+.pricing-plan {
+  .btn-group {
+    display: inline-flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: var(--primary-soft);
+    backdrop-filter: blur(30px);
+
+    button {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      border: none;
+      transition: 0.3s;
+      cursor: pointer;
+      background-color: white;
+      color: var(--primary);
+
+      span {
+        font-size: 10px;
+        color: var(--secondary);
+      }
+
+      &.active {
+        background-color: var(--primary);
+        color: white;
+
+        span {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+
+  .card {
+    border-radius: 20px;
+    padding: 16px;
+    background-color: white;
+    color: var(--primary);
+    cursor: pointer;
+
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      color: #7c828d;
+    }
+
+    .card-header {
+      padding: 10px;
+      background-color: var(--primary-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      line-height: 1;
+
+      .price {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--primary);
+        margin: 0;
+
+        span {
+          font-size: 14px;
+          font-weight: 400;
+          color: #7c828d;
+        }
+      }
+    }
+
+    .card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+
+        i {
+          color: var(--secondary);
+          font-size: 16px;
+        }
+
+        &.disabled {
+          color: #5d626b;
+
+          i {
+            color: #5d626b;
+          }
+        }
+      }
+    }
+
+    /* active */
+    &.active {
+      background-color: var(--primary);
+      color: white;
+
+      .card-header {
+        background-color: white;
+
+        .title {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+}
