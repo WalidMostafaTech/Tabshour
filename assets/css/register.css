@@ -78,26 +78,34 @@
 }
 
 /* حقل رقم الجوال مع الكود */
+/* الحاوية الرئيسية للمدخل */
 .iti {
   width: 100%;
+  direction: ltr !important;
 }
-
 .iti input {
   width: 100%;
   padding-block: 12px;
   border-radius: 10px;
   border: 1px solid #ddd;
   font-family: "Alexandria", sans-serif;
+  padding-left: 90px !important;
+  padding-right: 12px !important;
 }
-
 .iti input:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
   outline: none;
 }
-
-.iti__flag-container {
-  border-radius: 10px 0 0 10px;
+.iti__country-list {
+  left: 0 !important;
+  right: auto !important;
+  text-align: left;
+  direction: ltr;
+}
+.iti__country-container {
+  left: 0 !important;
+  right: auto !important;
 }
 
 /* حقل كلمة المرور */
