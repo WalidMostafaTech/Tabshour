@@ -70,17 +70,22 @@ p {
 }
 
 .form-label {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .form-control,
 .form-select {
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 12px 14px;
-  font-size: 14px;
+  padding: 14px 14px;
+  font-size: 16px;
   font-family: "Alexandria", sans-serif;
   transition: 0.2s;
+
+  &::placeholder {
+    color: rgb(146, 146, 146);
+    font-size: 14px;
+  }
 
   &:focus {
     border-color: var(--primary);
@@ -88,11 +93,16 @@ p {
     outline: none;
   }
 }
+.form-select {
+  background-position: left 0.75rem center;
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+}
 
 .main-btn {
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
   border: 1px solid var(--primary);
   transition: 0.3s;
   cursor: pointer;
@@ -120,7 +130,7 @@ p {
   gap: 12px;
 
   span {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--primary);
     text-transform: uppercase;
     font-weight: 600;
@@ -129,7 +139,12 @@ p {
   }
 
   .section-header-title {
-    line-height: 1.5;
+    line-height: 1.7;
+    font-size: 1.2rem;
+  }
+
+  .section-header-description {
+    line-height: 1.8;
     font-size: 1.1rem;
   }
 
@@ -224,7 +239,7 @@ p {
   /* تنسيق الروابط */
   .footer-links li {
     margin-bottom: 15px;
-    font-size: small;
+    /* font-size: small; */
   }
 
   .footer-links a {

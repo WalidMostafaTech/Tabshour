@@ -33,7 +33,7 @@
 
     <!-- style.css -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="assets/css/register.css" />
   </head>
 
   <body>
@@ -45,7 +45,7 @@
         min-height: 100dvh;
         padding: 12px;
         padding-block: 6rem;
-        background: url(/assets/images/bg-image.png) no-repeat center center;
+        background: url(assets/images/bg-image.png) no-repeat center center;
         background-size: cover;
       "
       class="d-flex justify-content-center align-items-center"
@@ -132,7 +132,7 @@
             <button
               onclick="goToStep(2)"
               class="main-btn"
-              style="min-width: 150px"
+              style="min-width: 170px"
             >
               التالي
             </button>
@@ -165,7 +165,7 @@
             <div
               class="d-flex flex-column align-items-center justify-content-center text-center gap-2 mb-3"
             >
-              <h3 class="text-primary">خطط الأسعار</h3>
+              <h4 class="text-primary">خطط الأسعار</h4>
               <p class="text-primary">
                 اختر الباقة المناسبة لحجم عملك. يمكنك الترقية أو الإلغاء في أي
                 وقت.
@@ -241,7 +241,7 @@
             <button
               onclick="goToStep(1)"
               class="main-btn outline"
-              style="min-width: 150px"
+              style="min-width: 170px"
             >
               السابق
             </button>
@@ -249,7 +249,7 @@
             <button
               onclick="goToStep(3)"
               class="main-btn"
-              style="min-width: 150px"
+              style="min-width: 170px"
             >
               التالي
             </button>
@@ -261,8 +261,8 @@
           <div
             class="d-flex flex-column align-items-center justify-content-center text-center gap-2 mb-3"
           >
-            <h3 class="text-primary">بيانات الفاتورة</h3>
-            <p class="text-primary">
+            <h4 class="text-primary">بيانات الفاتورة</h4>
+            <p class="text-primary" style="font-size: 16px">
               يرجى مراجعة كافة البيانات قبل الدفع أو الطلب
             </p>
           </div>
@@ -298,33 +298,47 @@
               >
                 <i class="bi bi-person-fill"></i>
               </div>
-              <h6 class="text-primary flex-grow-1 m-0">بيانات العميل</h6>
+              <h5 class="text-primary flex-grow-1 m-0">بيانات العميل</h5>
             </div>
 
             <ul class="list-group list-group-flush p-2 px-lg-4">
               <li
                 class="d-flex gap-2 justify-content-between border-bottom py-2"
               >
-                <p style="font-size: 12px; margin: 0">اسم العميل</p>
-                <span style="font-size: 12px">حسن احمد محمود</span>
+                <p style="font-size: 12px; font-weight: 400; margin: 0">
+                  اسم العميل
+                </p>
+                <span class="fs-6 text-primary fw-semibold"
+                  >حسن احمد محمود</span
+                >
               </li>
               <li
                 class="d-flex gap-2 justify-content-between border-bottom py-2"
               >
-                <p style="font-size: 12px; margin: 0">اسم العميل</p>
-                <span style="font-size: 12px">حسن احمد محمود</span>
+                <p style="font-size: 12px; font-weight: 400; margin: 0">
+                  اسم العميل
+                </p>
+                <span class="fs-6 text-primary fw-semibold"
+                  >حسن احمد محمود</span
+                >
               </li>
               <li
                 class="d-flex gap-2 justify-content-between border-bottom py-2"
               >
-                <p style="font-size: 12px; margin: 0">اسم العميل</p>
-                <span style="font-size: 12px">حسن احمد محمود</span>
+                <p style="font-size: 12px; font-weight: 400; margin: 0">
+                  اسم العميل
+                </p>
+                <span class="fs-6 text-primary fw-semibold"
+                  >حسن احمد محمود</span
+                >
               </li>
-              <li
-                class="d-flex gap-2 justify-content-between border-bottom py-2"
-              >
-                <p style="font-size: 12px; margin: 0">اسم العميل</p>
-                <span style="font-size: 12px">حسن احمد محمود</span>
+              <li class="d-flex gap-2 justify-content-between pt-2">
+                <p style="font-size: 12px; font-weight: 400; margin: 0">
+                  اسم العميل
+                </p>
+                <span class="fs-6 text-primary fw-semibold"
+                  >حسن احمد محمود</span
+                >
               </li>
             </ul>
           </div>
@@ -340,33 +354,31 @@
               >
                 <i class="bi bi-person-fill"></i>
               </div>
-              <h6 class="text-primary flex-grow-1 m-0">بيانات الباقه</h6>
+              <h5 class="text-primary flex-grow-1 m-0">بيانات الباقه</h5>
             </div>
 
             <ul class="list-group list-group-flush p-2 px-lg-4">
-              <li
-                class="d-flex gap-2 justify-content-between border-bottom py-2"
-              >
-                <p style="font-size: 12px; margin: 0">سعر الباقة</p>
-                <span style="font-size: 12px">3500</span>
+              <li class="d-flex gap-2 justify-content-between py-1">
+                <p style="font-size: 12px; font-weight: 600; margin: 0">
+                  سعر الباقة
+                </p>
+                <span class="fs-6 text-primary fw-semibold">3500</span>
               </li>
-              <li
-                class="d-flex gap-2 justify-content-between border-bottom py-2"
-              >
-                <p style="font-size: 12px; margin: 0">سعر الباقة</p>
-                <span style="font-size: 12px">3500</span>
+              <li class="d-flex gap-2 justify-content-between py-1">
+                <p style="font-size: 12px; font-weight: 600; margin: 0">
+                  سعر الباقة
+                </p>
+                <span class="fs-6 text-primary fw-semibold">3500</span>
               </li>
-              <li
-                class="d-flex gap-2 justify-content-between border-bottom py-2"
-              >
-                <p style="font-size: 12px; margin: 0">سعر الباقة</p>
-                <span style="font-size: 12px">3500</span>
+              <li class="d-flex gap-2 justify-content-between py-1">
+                <p style="font-size: 12px; font-weight: 600; margin: 0">
+                  سعر الباقة
+                </p>
+                <span class="fs-6 text-primary fw-semibold">3500</span>
               </li>
-              <li
-                class="d-flex gap-2 justify-content-between border-bottom py-2"
-              >
+              <li class="d-flex gap-2 justify-content-between pt-1 border-top">
                 <p style="font-size: 16px; margin: 0">المطلوب دفعه</p>
-                <span style="font-size: 16px; font-weight: 600">3500</span>
+                <span class="fs-4 text-primary fw-semibold">3500</span>
               </li>
             </ul>
           </div>
@@ -375,7 +387,7 @@
             <button
               onclick="goToStep(2)"
               class="main-btn outline"
-              style="min-width: 150px"
+              style="min-width: 170px"
             >
               السابق
             </button>
@@ -383,7 +395,7 @@
             <button
               onclick="submitForm()"
               class="main-btn"
-              style="min-width: 150px"
+              style="min-width: 170px"
             >
               إنشاء الحساب
             </button>
