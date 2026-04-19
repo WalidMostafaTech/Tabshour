@@ -8,7 +8,19 @@ const loadComponent = async (id, file) => {
 loadComponent("contact-icons-section", "components/contact-icons-section.html");
 
 // load navbar
-loadComponent("navbar", "components/navbar.html");
+loadComponent("navbar", "components/navbar.html").then(() => {
+  const currentPage = window.location.pathname.split("/").pop();
+
+  const navLinks = document.querySelectorAll(".navbar .nav-link");
+
+  navLinks.forEach((link) => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
 
 // load footer
 loadComponent("footer", "components/footer.html");

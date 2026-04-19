@@ -27,7 +27,6 @@
 
     <!-- style.css -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/register.css" />
   </head>
 
   <body>
@@ -76,14 +75,17 @@
             <div class="position-relative">
               <input
                 type="password"
-                class="form-control"
-                placeholder="........................"
-                required
+                id="password-input"
+                class="form-control ps-5"
+                placeholder="••••••••"
               />
-              <i
-                class="bi bi-eye position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"
-                style="cursor: pointer"
-              ></i>
+              <button
+                type="button"
+                onclick="togglePassword()"
+                class="password-toggle-btn"
+              >
+                <i class="bi bi-eye" id="eye-icon"></i>
+              </button>
             </div>
           </div>
 
@@ -108,5 +110,19 @@
     <!-- main.js -->
     <script src="assets/js/loadComponent.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+      function togglePassword() {
+        const input = document.getElementById("password-input");
+        const icon = document.getElementById("eye-icon");
+        if (input.type === "password") {
+          input.type = "text";
+          icon.className = "bi bi-eye-slash";
+        } else {
+          input.type = "password";
+          icon.className = "bi bi-eye";
+        }
+      }
+    </script>
   </body>
 </html>
