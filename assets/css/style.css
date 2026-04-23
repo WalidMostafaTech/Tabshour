@@ -259,8 +259,8 @@ p {
   }
 
   .accordion-button::after {
-    margin-right: auto;
-    margin-left: 0;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
     background-image: none !important;
     content: "+";
     font-size: 2rem;
@@ -598,14 +598,34 @@ p {
 
 /* info-section */
 .info-section {
-  background: linear-gradient(180deg, var(--primary) 50%, var(--secondary) 50%);
+  width: 100%;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 
-  @media (width>=992px) {
-    background: linear-gradient(
-      90deg,
-      var(--secondary) 50%,
-      var(--primary) 50%
-    );
+  &.second {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 700px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 420px;
+    margin-inline-end: 0;
+
+    &.second {
+      margin-inline-start: 0;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 510px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 600px;
   }
 }
 
